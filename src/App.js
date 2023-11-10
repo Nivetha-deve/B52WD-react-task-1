@@ -1,25 +1,58 @@
 import logo from './logo.svg';
 import './App.css';
+import Card from './Card';
 
-function App() {
+function App(){
+  const planDetails=[
+    {
+    Place:"FREE",
+    price:"$0", 
+    Users:"Single Users", 
+    Storage:"5GB Storage",
+    Projects:"Unlimited Public Projects",
+    Access:"Community Acess",
+    Projects1:"Unlimited Private Projects",
+    support:"Dedicated Phone Support",
+    domain:"Free Subdomain",
+    reports:"Monthly Status Reports",
+  },                                                                                                                     
+  {
+    Place:"PLUS", 
+    price:"$9", 
+    Users:"5 Users",
+    Storage:"50GB Storage", 
+    Projects:"Unlimited Public Projects", 
+    Access:"Community Acess",
+    Projects1:"Unlimited Private Projects",
+    support:"Dedicated Phone Support",
+    domain:"Free Subdomain",
+    reports:"Monthly Status Reports",
+  },
+  {
+    Place:"PRO", 
+    price:"$49",
+    Users:"Unlimited Users", 
+    Storage:"150GB Storage", 
+    Projects:"Unlimited Public Projects", 
+    Access:"Community Acess",
+    Projects1:"Unlimited Private Projects",
+    support:"Dedicated Phone Support",
+    domain:" Unlimited Free Subdomain",
+    reports:"Monthly Status Reports",
+  },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+    <section class="pricing py-5">
+      <div class="container">
+        <div class="row">
+          {
+            planDetails.map((detail)=>{
+              return<Card details={detail}></Card>
+            })
+          };
+        </div>
+      </div>
+    </section>
+  )}
+  
 export default App;
